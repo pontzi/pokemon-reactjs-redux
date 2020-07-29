@@ -1,0 +1,47 @@
+/* .containerPokemon{
+    display: flex;
+} */
+.form-group{
+    width: 50%;
+}
+.form-group label{
+    color: white;
+}
+.pokemonsData{
+    width: 100%;
+    
+}
+.imgPokemon{
+    margin-right: 20%;
+}
+.imgPokemon img{
+    width: 80px;
+}
+
+.link{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 1px 2px black;
+    width: 50%;
+    border-radius: 20px;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0) );
+}
+.item_info-name{
+
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+.item_info p{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
