@@ -38,4 +38,7 @@ body {
   .pokeBall {
     height: 100px;
   }
+  .pokemonLogo {
+    height: 150px;
+  }
 }

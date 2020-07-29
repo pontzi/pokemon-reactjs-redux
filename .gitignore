@@ -25,3 +25,5 @@ yarn-error.log*
 *.svg
 *.jpg
 .vercel
+# Local Netlify folder
+.netlify

@@ -6,7 +6,7 @@ const PokeForm = (props) => {
 
   return (
     <div className="mt-4">
-      <form onSubmit={onHandleSubmit} className="Form">
+      <form onSubmit={onHandleSubmit} className="Form row">
         <div className="form-group col-12">
           <label>Name</label>
           <input

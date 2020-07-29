@@ -9,7 +9,7 @@ const Home = () => {
       <div className="parentContainer">
         <div className="container d-flex flex-wrap">
           <div className="container__info mr-4">
-            <img className="pokeBall" src={pokeBall} alt="Platzi Conf Logo" />
+            <img className="pokeBall" src={pokeBall} alt="Poke ball logo" />
             <p className="container__info-p1">CREATE YOUR OWN POKEMON</p>
             <p className="container__info-p2">
               The easiest way to manage <br /> your POKEMONS!
