@@ -1,11 +1,14 @@
 # Página web para crear tu propio pokemon
 
 Integrada con la api de pokeapi.co y tecnologias como React.JS
-Funciona en versión movil y escritorio.
+
+##### Diseño responsive para movil y escritorio
 
 ![Cómo luce?](./.readme-static/pokemonList.PNG)
 
 ![Crea tu pokemon](./.readme-static/newPokemon.PNG)
+
+[Ver la página en linea](https://your-own-pokemon.pontzi.vercel.app/)
 
 ## ¿Cómo funciona?
 
