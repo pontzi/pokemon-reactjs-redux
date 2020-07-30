@@ -5,7 +5,7 @@ import PokeForm from "../components/PokeForm";
 import "../pages/styles/Badges.css";
 import { connect } from "react-redux";
 import swal from "sweetalert";
-import onHandleSubmit from "./onHandleSubmit";
+import onHandleSubmit from "./functions/onHandleSubmit";
 
 const BadgesNew = (props) => {
   const [state, setState] = useState({ id: 1 });

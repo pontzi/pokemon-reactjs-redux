@@ -63,18 +63,22 @@ const PokeForm = (props) => {
             type="number"
             name="id"
             placeholder="Introduce a number"
+            min="1"
+            max="890"
           />
         </div>
-        <button className="btn btn-primary">Save</button>
-        <button onClick={onHandleDelete} className="btn btn-danger ml-4 mr-4">
-          Delete
-        </button>
-        <br />
-        <Link to="/badges">
-          <button className="mt-4 btn btn-success">
-            ¡Check your pokemon list!
+        <div className="form-group col-12">
+          <button className="btn btn-primary mr-2">Save</button>
+          <button onClick={onHandleDelete} className="btn btn-danger  ">
+            Delete
           </button>
-        </Link>
+          <br />
+          <Link to="/badges">
+            <button className="btn btn-success mt-2 ">
+              ¡Check your pokemon list!
+            </button>
+          </Link>
+        </div>
       </form>
     </div>
   );

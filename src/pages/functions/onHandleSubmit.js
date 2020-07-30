@@ -1,6 +1,6 @@
 import swal from "sweetalert";
 
-function onHandleSubmit(e, props) {
+const onHandleSubmit = (e, props) => {
   e.preventDefault();
   const name = document.getElementById("Name").value;
   const type = document.getElementById("Type").value;
@@ -51,5 +51,5 @@ function onHandleSubmit(e, props) {
       props.history.push("/badges");
     }, 2000);
   }
-}
+};
 export default onHandleSubmit;
