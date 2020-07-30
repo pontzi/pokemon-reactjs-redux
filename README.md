@@ -8,6 +8,8 @@ Integrada con la api de pokeapi.co y tecnologias como React.JS
 
 ![Crea tu pokemon](./.readme-static/newPokemon.PNG)
 
+![Edita tu pokemon](./.readme-static/mobile.PNG)
+
 [Ver la página en linea](https://your-own-pokemon.pontzi.vercel.app/)
 
 ## ¿Cómo funciona?
