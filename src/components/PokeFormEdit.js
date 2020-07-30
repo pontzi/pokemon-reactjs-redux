@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/PokeForm.css";
 import { Link } from "react-router-dom";
 const PokeForm = (props) => {
-  const { onHandleChange, onHandleSubmit, onHandleDelete } = props;
+  const { onHandleChange, onHandleSubmit, onHandleDelete, data } = props;
 
   return (
     <div className="mt-4">
@@ -18,6 +18,7 @@ const PokeForm = (props) => {
             placeholder="Pokemon Name"
             maxLength="10"
             autoFocus
+            value={data.name}
           />
         </div>
 
@@ -29,6 +30,9 @@ const PokeForm = (props) => {
             onChange={onHandleChange}
             name="type"
           >
+            <option value="" selected disabled hidden>
+              Choose here
+            </option>
             <option value="Fire">Fire</option>
             <option value="Poison">Poison</option>
             <option value="Electric">Electric</option>
@@ -51,6 +55,7 @@ const PokeForm = (props) => {
             type="number"
             name="weight"
             placeholder="Introduce a weight (kg)"
+            value={data.weight}
           />
         </div>
 
@@ -65,6 +70,7 @@ const PokeForm = (props) => {
             placeholder="Introduce a number"
             min="1"
             max="890"
+            value={data.id}
           />
         </div>
         <div className="form-group col-12">
@@ -73,7 +79,7 @@ const PokeForm = (props) => {
             Delete
           </button>
           <br />
-          <Link to="/badges">
+          <Link to="/pokemon">
             <button className="btn btn-success mt-2 ">
               ¡Check your pokemon list!
             </button>

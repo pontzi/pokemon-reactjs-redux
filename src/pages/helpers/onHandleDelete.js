@@ -26,7 +26,7 @@ const onHandleDelete = (e, props) => {
         icon: "success",
       });
       setTimeout(() => {
-        props.history.push("/badges");
+        props.history.push("/pokemon");
       }, 2000);
     } else {
       swal("Your pokemon is safe!");

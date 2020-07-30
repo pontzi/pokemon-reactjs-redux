@@ -1,12 +1,9 @@
 import swal from "sweetalert";
 
-const onHandleSubmitEdit = (e, props) => {
+const onHandleSubmitEdit = (e, props, state) => {
   e.preventDefault();
-  const name = document.getElementById("Name").value;
-  const type = document.getElementById("Type").value;
-  const weight = document.getElementById("Weight").value;
+  const { name, type, weight, id } = state;
   const weightInt = parseInt(weight);
-  const id = document.getElementById("Id").value;
   const idInt = parseInt(id);
   const arrayValidationNameAndType = [name, type];
   const arrayValidationWeightAndId = [weightInt, idInt];
@@ -39,7 +36,7 @@ const onHandleSubmitEdit = (e, props) => {
   } else {
     const { data } = props;
 
-    const newDataArray = data.filter((poke) => {
+    const filteredData = data.filter((poke) => {
       return (
         poke.name.toLowerCase() !== props.match.params.pokemonName.toLowerCase()
       ); /////////////////duda
@@ -56,14 +53,14 @@ const onHandleSubmitEdit = (e, props) => {
       weight: weightInt,
       id: idInt,
     };
-    newDataArray.push(editedPokemon);
+    const newDataArray = [editedPokemon, ...filteredData];
     props.dispatch({
       type: "EDIT_POKEMON",
       payload: newDataArray,
     });
     swal("Congrats", "¡Your pokemon was edited!", "success");
     setTimeout(() => {
-      props.history.push("/badges");
+      props.history.push("/pokemon");
     }, 2000);
   }
 };

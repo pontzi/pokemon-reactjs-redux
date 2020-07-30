@@ -28,6 +28,9 @@ const PokeForm = (props) => {
             onChange={onHandleChange}
             name="type"
           >
+            <option value="" selected disabled hidden>
+              Choose here
+            </option>
             <option value="Fire">Fire</option>
             <option value="Poison">Poison</option>
             <option value="Electric">Electric</option>
@@ -66,7 +69,7 @@ const PokeForm = (props) => {
           />
         </div>
         <div className="form-group col-12 col-sm col-sm">
-          <Link to="/badges">
+          <Link to="/pokemon">
             <button className="btn btn-success mr-2 mb-2 ">
               ¡Check your pokemon list!
             </button>

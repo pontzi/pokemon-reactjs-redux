@@ -12,7 +12,9 @@ const PokeBadge = (props) => {
       <div className="PokeBadge__name d-flex flex-wrap">
         <img
           className="mr-4"
-          src={`https://pokeres.bastionbot.org/images/pokemon/${data.id}.png`}
+          src={`https://pokeres.bastionbot.org/images/pokemon/${
+            data.id || 1
+          }.png`}
           alt="Img Pokemon *ENTER A VALID ID*"
         />
         <h1>{data.name || "NAME"}</h1>

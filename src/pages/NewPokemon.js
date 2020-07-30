@@ -1,38 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import pokemonLogo from "../images/pokemonLogo.png";
 import PokeBadge from "../components/PokeBadge";
 import PokeForm from "../components/PokeForm";
-import "../pages/styles/Badges.css";
+import onHandleSubmit from "./helpers/onHandleSubmit";
+import useOnHandleChange from "./helpers/hooks/useOnHandleChange";
 import { connect } from "react-redux";
-import swal from "sweetalert";
-import onHandleSubmit from "./functions/onHandleSubmit";
+import "../pages/styles/Badges.css";
 
 const BadgesNew = (props) => {
-  const [state, setState] = useState({ id: 1 });
-
-  useEffect(() => {
-    if (state.id === "") {
-      setState({ id: 1 });
-    }
-  }, [state.id]);
-
-  const onHandleChange = (e) => {
-    setState({
-      ...state,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [state, onHandleChange] = useOnHandleChange();
 
   return (
     <React.Fragment>
       <div className="Badges">
         <div className="Badges__hero">
           <div className="Badges__container">
-            <img
-              className="Badges_conf-logo"
-              src={pokemonLogo}
-              alt="Conf Logo"
-            />
+            <img className="Badges_logo" src={pokemonLogo} alt="Pokemon logo" />
           </div>
         </div>
       </div>
@@ -44,8 +27,8 @@ const BadgesNew = (props) => {
             </div>
             <div className="col-12 col-md-6">
               <PokeForm
-                onHandleSubmit={(e) => onHandleSubmit(e, props)}
-                onHandleChange={onHandleChange}
+                onHandleSubmit={(e) => onHandleSubmit(e, props, state)}
+                onHandleChange={(e) => onHandleChange(e)}
               />
             </div>
           </div>

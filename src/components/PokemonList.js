@@ -29,11 +29,14 @@ const PokemonList = (props) => {
               return (
                 <Link
                   to={{
-                    pathname: `/badges/${pokemon.name}/edit`,
+                    pathname: `/pokemon/${pokemon.name}/edit`,
                     search: `?id=${pokemon.id}`,
                   }}
                   className="link text-reset text-decoration-none"
-                  key={pokemon.id}
+                  key={
+                    pokemon.id +
+                    pokemon.weight * Math.floor(Math.random() * 100)
+                  }
                 >
                   <div className="row item">
                     <div className="mb-2 col-12 col-md-6 d-md-flex">

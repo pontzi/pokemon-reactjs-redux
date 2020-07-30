@@ -1,34 +1,32 @@
 import swal from "sweetalert";
 
-const onHandleSubmit = (e, props) => {
+const onHandleSubmit = (e, props, state) => {
   e.preventDefault();
-  const name = document.getElementById("Name").value;
-  const type = document.getElementById("Type").value;
-  const weight = document.getElementById("Weight").value;
+  const { name, type, weight, id } = state;
   const weightInt = parseInt(weight);
-  const id = document.getElementById("Id").value;
   const idInt = parseInt(id);
   const arrayValidationNameAndType = [name, type];
-  const arrayValidationWeightAndId = [weightInt, idInt];
-  const validationNameAndType = arrayValidationNameAndType.filter((item) => {
+  const arrayWeightAndIdValidation = [weightInt, idInt];
+
+  const nameAndTypeValidation = arrayValidationNameAndType.filter((item) => {
     return item === "";
   });
-  if (validationNameAndType.length > 0) {
+  if (nameAndTypeValidation.length > 0) {
     swal("Oops", "You must complete the forms", "error");
     return;
   }
-  const validationWeightAndId = arrayValidationWeightAndId.filter((item) => {
+  const weightAndIdValidation = arrayWeightAndIdValidation.filter((item) => {
     return isNaN(item);
   });
-  if (validationWeightAndId.length > 0) {
+  if (weightAndIdValidation.length > 0) {
     swal("Oops", "You must complete the forms", "error");
     return;
   }
   const { data } = props;
-  const validationExistingPokemon = data.filter((pokemon) => {
+  const existingPokemonValidation = data.filter((pokemon) => {
     return pokemon.name.toLowerCase() === name.toLowerCase();
   });
-  if (validationExistingPokemon.length > 0) {
+  if (existingPokemonValidation.length > 0) {
     swal("Oops", "¡The name of this pokemon already exists!", "error");
   } else {
     props.dispatch({
@@ -48,7 +46,7 @@ const onHandleSubmit = (e, props) => {
     });
     swal("Congrats", "¡Now you have a new pokemon!", "success");
     setTimeout(() => {
-      props.history.push("/badges");
+      props.history.push("/pokemon");
     }, 2000);
   }
 };
